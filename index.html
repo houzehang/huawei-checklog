@@ -10,7 +10,9 @@
       let channel_id  = $('input').val();
       let env         = $('select').val();
       console.log('MINGXI_DEBUG_LOG>>>>>>>>>111','');
-      $.get(`http://10.1.0.50:9090/check?channel_id=${channel_id}&env=${env}`)
+      $.get(`http://121.36.22.201/:9090/check?channel_id=${channel_id}&env=${env}`,(response)=>{
+        alert(response)
+      })
     }; 
 
   </script>
