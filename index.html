@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>明兮</title>
+<script src="jquery.js"></script>
+  <script>
+    function check(){
+      // alert('频道ID:'+$('input').val()+'，环境：'+$('select').val())
+      let channel_id  = $('input').val();
+      let env         = $('select').val();
+      console.log('MINGXI_DEBUG_LOG>>>>>>>>>111','');
+      $.get(`http://10.1.0.50:9090/check?channel_id=${channel_id}&env=${env}`)
+    }; 
+
+  </script>
+  </head>
+  <body>
+
+    频道ID：<input type="text"/>
+    环境：<select name="">
+          <option value="online">正式环境</option>
+          <option value='test'>测试环境</option>
+        </select>
+        <button type="button" onClick="check()">查看</button>
+  </body>
+</html>
+
