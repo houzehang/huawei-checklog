@@ -12,7 +12,12 @@
       console.log('MINGXI_DEBUG_LOG>>>>>>>>>111','');
       $.get(`http://121.36.22.201:9090/check?channel_id=${channel_id}&env=${env}`,(response)=>{
         alert(response)
-        location.reload(true)
+        if (window != window.top){
+            window.top.location.reload(true)
+            return;
+        } else {
+          location.reload(true)
+        }
       })
     }; 
 
