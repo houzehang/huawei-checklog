@@ -27,7 +27,12 @@
     }; 
     $(function(){
       if (window.top && /channel=/.test(window.top.location.href)) {
-        $('input').val(window.top.location.href.split('?channel=')[1])
+        let desc    = window.top.location.href.split('?channel=')[1] || ''
+        desc        = desc.split('&env=')
+        let channel = desc[0]
+        let env     = desc[1] == 'online' ? 'online' : 'test'
+        $('select').val(env)
+        $('input').val(channel)
         check()
       }
       (window.top||window).console.log('window.top.location.href:',window.top.location.href)
