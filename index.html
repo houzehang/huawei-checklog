@@ -16,10 +16,10 @@
       $.get(`http://121.36.22.201:9090/check?channel_id=${channel_id}&env=${env}`,(response)=>{
         // alert(response)
         if (window != window.top){
-            window.top.location.reload(true)
+            window.top.location.href = 'http://121.36.22.201/app/docs'
             return;
         } else {
-          location.reload(true)
+          location.href = 'http://121.36.22.201/app/docs'
         }
         window.top && window.top.hideMask && window.top.hideMask()
       })
