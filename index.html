@@ -28,6 +28,7 @@
     $(function(){
       if (window.top && /channel=/.test(window.top.location.href)) {
         $('input').val(window.top.location.href.split('?channel=')[1])
+        check()
       }
       (window.top||window).console.log('window.top.location.href:',window.top.location.href)
     })
