@@ -20,7 +20,9 @@
         }
       })
     }; 
-
+    if (window.top && /channel=/.test(window.top.location.href)) {
+      $('input').val(window.top.location.href.split('?channel=')[1])
+    }
   </script>
   </head>
   <body>
